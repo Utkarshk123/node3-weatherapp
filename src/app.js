@@ -5,6 +5,7 @@ const { hasSubscribers } = require('diagnostics_channel')
 const geocode = require('./utills/geocode')
 const forecast = require('./utills/forecast')
 const app = express()
+const port = process.env.PORT || 3000
 // console.log(__dirname)
 // console.log(path.join(__dirname, '../public'))
 // define path for express config 
@@ -97,6 +98,6 @@ app.get('*', (req, res) => {
         errorMessage: 'Page Not Found'
     })
 })
-app.listen(3000, () => {
-    console.log('Server is up on port 3000')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 }) 
